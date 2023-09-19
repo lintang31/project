@@ -28,17 +28,17 @@
                     </a>
                 </li>
 
+                
                 <li>
-                    <a href="" class="block rounded-lg px-4 py-2 text-sm font-medium text-white hover:bg-gray-700">
-                        Lain nya
+                    <a href="<?php echo base_url('admin/siswa'); ?>"
+                        class="block rounded-lg px-4 py-2 text-sm font-medium text-white hover:bg-gray-700">
+                        guru
                     </a>
                 </li>
 
                 <li>
                     <details class="group [&_summary::-webkit-details-marker]:hidden">
-                        <summary
-                            class="flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-white hover:bg-gray-700">
-                            <span class="text-sm font-medium"> Account </span>
+                        <summary>
 
                             <span class="shrink-0 transition duration-300 group-open:-rotate-180">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
@@ -49,25 +49,6 @@
                                 </svg>
                             </span>
                         </summary>
-
-                        <ul class="mt-2 space-y-1 px-4">
-                            <li>
-                                <a href=""
-                                    class="block rounded-lg px-4 py-2 text-sm font-medium text-white hover:bg-gray-700">
-                                    Details
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href=""
-                                    class="block rounded-lg px-4 py-2 text-sm font-medium text-white hover:bg-gray-700">
-                                    Security
-                                </a>
-                            </li>
-
-                            <li>
-
-                            </li>
                         </ul>
                     </details>
                 </li>
