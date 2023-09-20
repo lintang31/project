@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -30,7 +32,7 @@
 
                 
                 <li>
-                    <a href="<?php echo base_url('admin/siswa'); ?>"
+                    <a href="<?php echo base_url('admin/guru'); ?>"
                         class="block rounded-lg px-4 py-2 text-sm font-medium text-white hover:bg-gray-700">
                         guru
                     </a>
@@ -59,13 +61,32 @@
             <a href="<?php echo base_url('Auth/logout'); ?>"
                 class="flex items-center gap-2 bg-gray-900 p-4 hover:bg-gray-700 text-white">
                 <div>
-                    <p class="text-base">
-                        <strong class="block font-medium">Log out</strong>
-                    </p>
+                <a type="button" onclick="confirmLogout()">
+                    <i class="fas fa-sign-out-alt fa-2x text-danger"></i>
+                </a>
                 </div>
             </a>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- LOGOUT -->
+    <script>
+        function confirmLogout() {
+            Swal.fire({
+                title: 'Yakin mau LogOut?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "<?php echo base_url('auth/logout') ?>";
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

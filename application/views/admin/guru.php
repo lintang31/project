@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 
 </head>
 
@@ -17,59 +19,60 @@
 
         <div class="container mt-12">
             <?php $this->load->view('components/navbar')?>
-            <div class="overflow-x-auto">
-                <table class="divide-y-2 divide-gray-200 bg-white text-sm w-full px-2">
-                    <thead>
-                        <tr>
-                            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 text-left">
-                                No
-                            </th>
-                            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 text-left">
-                                Nama Guru
-                            </th>
-                            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 text-left">
-                                NISN
-                            </th>
-                            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 text-left">
-                                Gender
-                            </th>
-                            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 text-left">
-                                Kelas
-                            </th>
-                            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                                Aksi
-                            </th>
-                            <th class="px-4 py-2"></th>
-                        </tr>
-                    </thead>
-
-                    <tbody class="divide-y divide-gray-200">
-                        <?php $no=0; foreach($guru as $row): $no++ ?>
-                        <tr>
-                            <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $no ?></td>
-                            <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-                                <?php echo $row->nama_guru ?>
-                            </td>
-                            <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->nik ?></td>
-                            <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->gender ?></td>
-                            <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->id_mapel ?></td>
-                            <td class="whitespace-nowrap px-4 py-2 text-center">
-                                <a href="<?php echo base_url('admin/ubah_guru/').$row->id?>" class="inline-block rounded bg-sky-600 px-4 py-2 text-xs font-medium text-white hover:bg-sky-700">
-                                    Ubah
-                                </a>
-                                <button onclick="hapus(<?php echo $row->id ?>)"
-                                    class="inline-block rounded bg-red-600 px-4 py-2 text-xs font-medium text-white hover:bg-red-700">
-                                    Hapus
-                                </button>
-                                <a href="<?php echo base_url('admin/tambah_guru'); ?>" type="submit" 
-                                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-2/6">
-                                    Tambah
-                                </button>
-                            </td>
-                        </tr>
-                        <?php endforeach ?>
-                    </tbody>
-                </table>
+            <div class="card mb-4 shadow">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="card-title">Daftar Guru</h5>
+                    <a href="<?php echo base_url('admin/tambah_guru') ?>" class="btn btn-success m-2">
+                        <i class="fas fa-plus"></i> Tambah
+                    </a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama Guru</th>
+                                <th>NIK</th>
+                                <th>Gender</th>
+                                <th>Mapel</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php $no = 0;
+                            foreach ($guru as $row):
+                                $no++ ?>
+                                <tr>
+                                    <td>
+                                        <?php echo $no ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row->nama_guru ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row->nik ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row->gender ?>
+                                    </td>
+                                    <td>
+                                        <?php echo tampil_full_mapel_byid($row->id_mapel) ?>
+                                    </td>
+                                    <td>
+                                        <a href="<?php echo base_url('admin/ubah_guru/') . $row->id_guru ?>"
+                                            class="btn btn-primary">
+                                            <i class="fas fa-edit"></i> Edit
+                                        </a>
+                                        <button onClick="hapus(<?php echo $row->id_guru; ?>)" class="btn btn-danger">
+                                            <i class="fas fa-trash"></i> Hapus
+                                        </button>
+                                    </td>
+                                </tr>
+                            <?php endforeach ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
@@ -77,7 +80,7 @@
     function hapus(id) {
         var yes = confirm('Yakin Di Hapus?');
         if (yes == true) {
-            window.location.href = "<?php echo base_url('admin/hapus_guru/')?>" + id;
+            window.location.href = "<?php echo base_url('admin/hapus_siswa/')?>" + id;
         }
     }
     </script>
