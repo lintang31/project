@@ -19,16 +19,8 @@
             <div class="overflow-x-auto">
                 <div class="grid grid-cols-4 gap-4 w-full">
                     <div class="h-32 rounded-lg bg-gray-100 w-60">
-                        <p class="text-xl ml-4 mt-2 font-medium">Jumlah Kelas</p>
-                        <p class="ml-4 mt-4 text-3xl font-semibold">13</p>
-                    </div>
-                    <div class="h-32 rounded-lg bg-gray-100 w-60">
                         <p class="text-xl ml-4 mt-2 font-medium">Jumlah Siswa</p>
                         <p class="ml-4 mt-4 text-3xl font-semibold">8</p>
-                    </div>
-                    <div class="h-32 rounded-lg bg-gray-100 w-60">
-                        <p class="text-xl ml-4 mt-2 font-medium">Jumlah Mapel</p>
-                        <p class="ml-4 mt-4 text-3xl font-semibold">9</p>
                     </div>
                     <div class="h-32 rounded-lg bg-gray-100 w-60">
                         <p class="text-xl ml-4 mt-2 font-medium">Jumlah Guru</p>

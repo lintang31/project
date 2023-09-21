@@ -24,7 +24,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <h5 class="card-title">Daftar Guru</h5>
                     <a href="<?php echo base_url('admin/tambah_guru') ?>" class="btn btn-success m-2">
-                        <i class="fas fa-plus"></i> Tambah
+                        <i></i> Tambah
                     </a>
                 </div>
                 <div class="table-responsive">
@@ -62,10 +62,10 @@
                                     <td>
                                         <a href="<?php echo base_url('admin/ubah_guru/') . $row->id_guru ?>"
                                             class="btn btn-primary">
-                                            <i class="fas fa-edit"></i> Edit
+                                            <i></i> ubah
                                         </a>
                                         <button onClick="hapus(<?php echo $row->id_guru; ?>)" class="btn btn-danger">
-                                            <i class="fas fa-trash"></i> Hapus
+                                            <i></i> Hapus
                                         </button>
                                     </td>
                                 </tr>
@@ -80,7 +80,7 @@
     function hapus(id) {
         var yes = confirm('Yakin Di Hapus?');
         if (yes == true) {
-            window.location.href = "<?php echo base_url('admin/hapus_siswa/')?>" + id;
+            window.location.href = "<?php echo base_url('admin/hapus_guru/')?>" + id;
         }
     }
     </script>

@@ -13,6 +13,48 @@ class Admin extends CI_Controller
 			redirect(base_url() . 'auth');
 		}
 	}
+
+         // REGISTER
+	  	  public function register()
+	  {
+		  $this->load->view('auth/register');
+	  }
+  
+	  public function aksi_register()
+	  {
+		  $email = $this->input->post('email', true);
+		  $username = $this->input->post('username', true);
+		  $password = md5($this->input->post('password', true));
+  
+		  $data = [
+			  'email' => $email,
+			  'username' => $username,
+			  'password' => $password,
+			  'role' => 'admin',
+		  ];
+  
+		  $table = 'admin';
+  
+		  $this->db->insert($table, $data);
+  
+		  if ($this->db->affected_rows() > 0) {
+			  // Registrasi berhasil
+			  $this->session->set_userdata([
+				  'logged_in' => TRUE,
+				  'email' => $email,
+				  'username' => $username,
+				  'role' => 'admin'
+			  ]);
+			  // SweetAlert untuk Registrasi Berhasil
+			  $this->session->set_flashdata('success', 'Registrasi berhasil!');
+			  redirect(base_url() . "admin");
+		  } else {
+			  // Registrasi gagal
+			  redirect(base_url() . "auth/register");
+		  }
+	  }
+  
+
 	// admin
 	public function index()
 	{

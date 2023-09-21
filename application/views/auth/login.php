@@ -7,7 +7,11 @@
     <title>Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-
+<style>
+    body {
+        background-image: url("https://perpus.man2probolinggo.sch.id/wp-content/uploads/2023/04/Naskah-176.jpg");
+    }
+</style>
 <body class="flex min-h-screen justify-center items-center bg-black/50">
     <div class="flex flex-col w-1/3 p-6 h-1/2 rounded-md sm:p-10  dark:text-gray-100">
         <div class="mb-8 text-center">
@@ -40,7 +44,7 @@
                         fdprocessedid="r78vz9">login</button>
                 </div>
                 <p class="px-6 text-sm text-center dark:text-gray-400">apakah anda belum punya akun?
-                    <a rel="noopener noreferrer" href="#" class="hover:underline dark:text-violet-400">daftar</a>.
+                    <a rel="noopener noreferrer" href="<?php echo base_url('auth/register'); ?>" class="hover:underline dark:text-violet-400">daftar</a>.
                 </p>
             </div>
         </form>

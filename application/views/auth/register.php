@@ -7,17 +7,21 @@
     <title>Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-
+<style>
+    body {
+        background-image: url("https://perpus.man2probolinggo.sch.id/wp-content/uploads/2023/04/Naskah-176.jpg");
+    }
+</style>
 <body class="flex min-h-screen justify-center items-center bg-black/50">
     <div class="flex flex-col w-1/3 p-6 h-1/2 rounded-md sm:p-10  dark:text-gray-100">
         <div class="mb-8 text-center">
             <h1 class="my-3 text-4xl font-bold"> Register</h1>
         </div>
-        <form action="<?php echo base_url(); ?>Auth/process_register" method="post" class="space-y-12">
+        <form action="<?php echo base_url(); ?>auth/aksi_register" method="post" class="space-y-12">
             <div class="space-y-4">
             <div>
                     <label for="username" class="block mb-2 text-sm">Username </label>
-                    <input type="username" name="email" id="username" placeholder="username" autocomplete="off"
+                    <input type="username" name="username" id="username" placeholder="username" autocomplete="off"
                         class="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"
                         fdprocessedid="kq4yx">
                 </div>
@@ -44,8 +48,8 @@
                         class="w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-400 dark:text-gray-900"
                         fdprocessedid="r78vz9">register</button>
                 </div>
-                <p class="px-6 text-sm text-center dark:text-gray-400">apakah anda belum punya akun?
-                    <a rel="noopener noreferrer" href="#" class="hover:underline dark:text-violet-400">daftar</a>.
+                <p class="px-6 text-sm text-center dark:text-gray-400">apakah anda sudah punya akun?
+                    <a rel="noopener noreferrer" href="<?php echo base_url('auth'); ?>" class="hover:underline dark:text-violet-400">login</a>
                 </p>
             </div>
         </form>

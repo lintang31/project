@@ -20,7 +20,7 @@
             <?php $this->load->view('components/navbar')?>
             <div class="card mb-4 shadow">
             <div class="card-body">
-                <h5 class="card-title">Edit Data Siswa</h5>
+                <h5 class="card-title">ubah Data Siswa</h5>
                 <?php foreach ($siswa as $data_siswa): ?>
                     <form action="<?php echo base_url('admin/aksi_ubah_siswa') ?>" enctype="multipart/form-data"
                         method="POST">

@@ -21,7 +21,7 @@
             <?php $this->load->view('components/navbar')?>
             <div class="card mb-4 shadow">
             <div class="card-body">
-                <h5 class="card-title">Edit Data Guru</h5>
+                <h5 class="card-title">ubah Data Guru</h5>
                 <?php foreach ($guru as $data_guru): ?>
                     <form action="<?php echo base_url('admin/aksi_ubah_guru') ?>" enctype="multipart/form-data"
                         method="POST">
