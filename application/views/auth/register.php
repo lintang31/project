@@ -17,7 +17,7 @@
         <div class="mb-8 text-center">
             <h1 class="my-3 text-4xl font-bold"> Register</h1>
         </div>
-        <form action="<?php echo base_url(); ?>auth/aksi_register" method="post" class="space-y-12">
+        <form action="<?php echo base_url(); ?>Auth/aksi_register" method="post" class="space-y-12">
             <div class="space-y-4">
             <div>
                     <label for="username" class="block mb-2 text-sm">Username </label>
@@ -32,9 +32,14 @@
                         fdprocessedid="kq4yx">
                 </div>
                 <div>
+                    <label for="role" class="block mb-2 text-sm">Role </label>
+                    <input type="role" name="role" id="role" placeholder=" role" autocomplete="off"
+                        class="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"
+                        fdprocessedid="kq4yx">
+                </div>
+                <div>
                     <div class="flex justify-between mb-2">
                         <label for="password" class="text-sm">Password</label>
-                        <a rel="noopener noreferrer" href="#" class="text-xs hover:underline dark:text-gray-400">Forgot</a>
                     </div>
                     <input type="password" name="password" id="password" placeholder=" password"
                         autocomplete="off"

@@ -52,38 +52,36 @@ class Auth extends CI_Controller {
         $this->load->view('auth/register');
     }
 
-    public function aksi_register()
-    {
-        $email = $this->input->post('email', true);
-        $username = $this->input->post('username', true);
-        $password = md5($this->input->post('password', true));
+    public function aksi_register() 
+    { 
+        $this->load->library('form_validation'); 
+        
 
-        $data = [
-            'email' => $email,
-            'username' => $username,
-            'password' => $password,
-            'role' => 'admin',
-        ];
-
-        $table = 'admin';
-
-        $this->db->insert($table, $data);
-
-        if ($this->db->affected_rows() > 0) {
-            // Registrasi berhasil
-            $this->session->set_userdata([
-                'logged_in' => TRUE,
-                'email' => $email,
-                'username' => $username,
-                'role' => 'admin'
-            ]);
-            // SweetAlert untuk Registrasi Berhasil
-            $this->session->set_flashdata('success', 'Registrasi berhasil!');
-            redirect(base_url() . "admin");
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email'); 
+        $this->form_validation->set_rules('username', 'username');
+        $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]');
+        $this->form_validation->set_rules('role', 'role');
+    
+        if ($this->form_validation->run() == FALSE) { 
+            $this->session->set_flashdata('salah_password', 'Password harus ada 8 karakter.');
+            redirect(base_url('auth'));
         } else {
-            // Registrasi gagal
-            redirect(base_url() . "auth/register");
-        }
+            $email = $this->input->post('email', true);
+            $username = $this->input->post('username', true);
+            $password = md5($this->input->post('password', true));
+            $role = $this->input->post('role', true);
+    
+            $data = [ 
+                'email' => $email, 
+                'username' => $username,
+                'password' => $password,
+                'role' => $role,
+            ]; 
+    
+            $this->m_model->tambah_data('admin', $data); 
+            $this->session->set_flashdata('berhasil_register', 'Berhasil Registrasi, Silahkan Login');
+            redirect(base_url('auth')); 
+        } 
     }
 
     function logout()
