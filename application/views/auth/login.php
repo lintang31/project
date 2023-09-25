@@ -9,7 +9,7 @@
 </head>
 <style>
     body {
-        background-image: url("https://perpus.man2probolinggo.sch.id/wp-content/uploads/2023/04/Naskah-176.jpg");
+        background-image: url("https://bintangsempurna.co.id/uploads/posts/Hiasan_dinding_estetik_putih_vintage_polaroid_foto.jpg");
     }
 </style>
 <body class="flex min-h-screen justify-center items-center bg-black/50">
@@ -43,7 +43,7 @@
                         class="w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-400 dark:text-gray-900"
                         fdprocessedid="r78vz9">login</button>
                 </div>
-                <p class="px-6 text-sm text-center dark:text-gray-400">apakah anda belum punya akun?
+                <p class="px-6 text-sm text-center dark:text-gray-400">
                     <a rel="noopener noreferrer" href="<?php echo base_url('auth/register'); ?>" class="hover:underline dark:text-violet-400">daftar</a>.
                 </p>
             </div>
